@@ -36,7 +36,9 @@ class GFButton: UIButton {
     /* --- Helper Methods --- */
     private func configure() {
         layer.cornerRadius = 10
-        titleLabel?.textColor = .white
+        // not necessary since it's white by default, but I'll leave the code here
+        // in case want to tweak the colors later
+        setTitleColor(.white, for: .normal)
         
         // add this to make the app conform to dynamic type (when user adjusts phone's
         // Text Size in settings)

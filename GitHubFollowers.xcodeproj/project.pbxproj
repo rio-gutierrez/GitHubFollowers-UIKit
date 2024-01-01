@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		28306A142B42C31E00C06331 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28306A132B42C31E00C06331 /* NetworkManager.swift */; };
+		28306A172B43059900C06331 /* NetworkErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28306A162B43059900C06331 /* NetworkErrorMessage.swift */; };
 		284B82002B41696A00624549 /* GFTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284B81FF2B41696A00624549 /* GFTitleLabel.swift */; };
 		284B82022B416C9E00624549 /* GFBodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284B82012B416C9E00624549 /* GFBodyLabel.swift */; };
 		284B82042B416DB600624549 /* GFAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284B82032B416DB600624549 /* GFAlertVC.swift */; };
@@ -19,10 +21,14 @@
 		287ABDF52AA85D6F00F5E3F3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 287ABDF32AA85D6F00F5E3F3 /* LaunchScreen.storyboard */; };
 		287ABDFD2AA864EB00F5E3F3 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287ABDFC2AA864EB00F5E3F3 /* SearchVC.swift */; };
 		287ABE032AA865D500F5E3F3 /* FavoritesListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287ABE022AA865D500F5E3F3 /* FavoritesListVC.swift */; };
+		28AB82E32B41E8CA008570F0 /* Follower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AB82E22B41E8CA008570F0 /* Follower.swift */; };
+		28AB82E52B41E978008570F0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AB82E42B41E978008570F0 /* User.swift */; };
 		28BD56102B3F4CC90040EF98 /* FollowerListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BD560F2B3F4CC90040EF98 /* FollowerListVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		28306A132B42C31E00C06331 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		28306A162B43059900C06331 /* NetworkErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorMessage.swift; sourceTree = "<group>"; };
 		284B81FF2B41696A00624549 /* GFTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFTitleLabel.swift; sourceTree = "<group>"; };
 		284B82012B416C9E00624549 /* GFBodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFBodyLabel.swift; sourceTree = "<group>"; };
 		284B82032B416DB600624549 /* GFAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFAlertVC.swift; sourceTree = "<group>"; };
@@ -37,6 +43,8 @@
 		287ABDF62AA85D6F00F5E3F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		287ABDFC2AA864EB00F5E3F3 /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		287ABE022AA865D500F5E3F3 /* FavoritesListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListVC.swift; sourceTree = "<group>"; };
+		28AB82E22B41E8CA008570F0 /* Follower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Follower.swift; sourceTree = "<group>"; };
+		28AB82E42B41E978008570F0 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		28BD560F2B3F4CC90040EF98 /* FollowerListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerListVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -51,6 +59,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		28306A122B42C2FD00C06331 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				28306A132B42C31E00C06331 /* NetworkManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		28306A152B43057000C06331 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				28306A162B43059900C06331 /* NetworkErrorMessage.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		284B82072B41C1F400624549 /* Config */ = {
 			isa = PBXGroup;
 			children = (
@@ -58,7 +82,6 @@
 				287ABDF12AA85D6F00F5E3F3 /* Assets.xcassets */,
 				287ABDF32AA85D6F00F5E3F3 /* LaunchScreen.storyboard */,
 				287ABDEA2AA85D6E00F5E3F3 /* SceneDelegate.swift */,
-				287ABDF62AA85D6F00F5E3F3 /* Info.plist */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -112,12 +135,25 @@
 		287ABDE72AA85D6E00F5E3F3 /* GitHubFollowers */ = {
 			isa = PBXGroup;
 			children = (
-				284B820A2B41C2C700624549 /* Extensions */,
+				287ABDF62AA85D6F00F5E3F3 /* Info.plist */,
 				284B82092B41C27700624549 /* Components */,
-				284B82082B41C23800624549 /* View Controllers */,
 				284B82072B41C1F400624549 /* Config */,
+				284B820A2B41C2C700624549 /* Extensions */,
+				28AB82E12B41E7AB008570F0 /* Model */,
+				28306A122B42C2FD00C06331 /* Network */,
+				28306A152B43057000C06331 /* Utilities */,
+				284B82082B41C23800624549 /* View Controllers */,
 			);
 			path = GitHubFollowers;
+			sourceTree = "<group>";
+		};
+		28AB82E12B41E7AB008570F0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				28AB82E22B41E8CA008570F0 /* Follower.swift */,
+				28AB82E42B41E978008570F0 /* User.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,7 +184,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1430;
-				LastUpgradeCheck = 1430;
+				LastUpgradeCheck = 1510;
 				TargetAttributes = {
 					287ABDE42AA85D6E00F5E3F3 = {
 						CreatedOnToolsVersion = 14.3.1;
@@ -190,14 +226,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28AB82E52B41E978008570F0 /* User.swift in Sources */,
 				28691D682B19F6D00001B81C /* GFTextField.swift in Sources */,
 				287ABDFD2AA864EB00F5E3F3 /* SearchVC.swift in Sources */,
 				28691D662B19F0A30001B81C /* GFButton.swift in Sources */,
+				28306A172B43059900C06331 /* NetworkErrorMessage.swift in Sources */,
 				284B82062B41AC3200624549 /* UIViewController+Ext.swift in Sources */,
 				287ABDE92AA85D6E00F5E3F3 /* AppDelegate.swift in Sources */,
 				284B82042B416DB600624549 /* GFAlertVC.swift in Sources */,
 				284B82022B416C9E00624549 /* GFBodyLabel.swift in Sources */,
+				28AB82E32B41E8CA008570F0 /* Follower.swift in Sources */,
 				284B82002B41696A00624549 /* GFTitleLabel.swift in Sources */,
+				28306A142B42C31E00C06331 /* NetworkManager.swift in Sources */,
 				28BD56102B3F4CC90040EF98 /* FollowerListVC.swift in Sources */,
 				287ABE032AA865D500F5E3F3 /* FavoritesListVC.swift in Sources */,
 				287ABDEB2AA85D6E00F5E3F3 /* SceneDelegate.swift in Sources */,
@@ -254,6 +294,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -314,6 +355,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
