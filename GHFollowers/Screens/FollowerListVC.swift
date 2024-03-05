@@ -12,12 +12,12 @@ class FollowerListVC: GFDataLoadingVC {
     enum Section { case main }
     
     var username: String!
-    var followers: [Follower]           = []
-    var filteredFollowers: [Follower]   = []
-    var page                            = 1
-    var hasMoreFollowers                = true
-    var isSearching                     = false
-    var isLoadingMoreFollowers          = false
+    var followers: [Follower]				= []
+    var filteredFollowers: [Follower]		= []
+    var page                           	= 1		// initial page of list of followers; var will increase as we scroll (see class extension)
+    var hasMoreFollowers                	= true
+    var isSearching                     	= false
+    var isLoadingMoreFollowers          	= false
     
     var collectionView: UICollectionView!
     var dataSource: UICollectionViewDiffableDataSource<Section, Follower>!
@@ -150,13 +150,15 @@ class FollowerListVC: GFDataLoadingVC {
     }
     
     
-    func configureDataSource() {
-        dataSource = UICollectionViewDiffableDataSource<Section, Follower>(collectionView: collectionView, cellProvider: { (collectionView, indexPath, follower) -> UICollectionViewCell? in
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FollowerCell.reuseID, for: indexPath) as! FollowerCell
-            cell.set(follower: follower)
-            return cell
-        })
-    }
+	func configureDataSource() {
+		dataSource = UICollectionViewDiffableDataSource<Section, Follower>(collectionView: collectionView, cellProvider: {
+			(collectionView, indexPath, follower) -> UICollectionViewCell? in
+			let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FollowerCell.reuseID, for: indexPath) as! FollowerCell
+			cell.set(follower: follower)
+			return cell
+		}
+		)
+	}
     
     
     func updateData(on followers: [Follower]) {

@@ -27,15 +27,15 @@ class GFTextField: UITextField {
         layer.borderWidth           = 2
         layer.borderColor           = UIColor.systemGray4.cgColor
         
-        textColor                   = .label
-        tintColor                   = .label
+        textColor                   = .label		 // `.label` is white on dark mode and black in light mode
+        tintColor                   = .label		 // `.tintColor` is the blinking cursor's color
         textAlignment               = .center
         font                        = UIFont.preferredFont(forTextStyle: .title2)
-        adjustsFontSizeToFitWidth   = true
-        minimumFontSize             = 12
+        adjustsFontSizeToFitWidth   = true		// makes long text fit into the box
+        minimumFontSize             = 12		// sets a lower bound for how much the text can shrink
         
         backgroundColor             = .tertiarySystemBackground
-        autocorrectionType          = .no
+        autocorrectionType          = .no		// autocorrection for usernames not a good idea
         returnKeyType               = .go
         clearButtonMode             = .whileEditing
         placeholder                 = "Enter a username"

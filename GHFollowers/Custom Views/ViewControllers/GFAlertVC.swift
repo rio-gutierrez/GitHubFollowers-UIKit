@@ -36,6 +36,7 @@ class GFAlertVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+		// giving the background an alpha of ~ 0.75 gives it a semi-transparent look when the alert shows up on screen
         view.backgroundColor = UIColor.black.withAlphaComponent(0.75)
         view.addSubviews(containerView, titleLabel, actionButton, messageLabel)
         
